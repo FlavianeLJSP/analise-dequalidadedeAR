@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+.env/
+.venv/
+
+# Modelo treinado
+models/*.pkl
+
+# VS Code
+.vscode/
+
+# Streamlit
+.streamlit/
+
+# Outros
+.DS_Store
+*.log
