@@ -27,7 +27,7 @@ def predict_from_reading(model, scaler, columns: list, reading: Dict[str, Any]):
 
     # Align columns with the training data
     missing_cols = set(columns) - set(X_pred.columns)
-    for c in missing_cols:
+    for c in sorted(list(missing_cols)): # sorted for deterministic order
         X_pred[c] = 0
     X_pred = X_pred[columns] # Ensure the order of columns is the same
 

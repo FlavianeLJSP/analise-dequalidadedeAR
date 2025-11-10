@@ -49,7 +49,7 @@ def train_model(pollutant: str = "pm25", model_type: str = "decision_tree", csv_
     r2 = r2_score(y_test, preds)
 
     model_path = os.path.join(out_dir, f"air_quality_{pollutant}_{model_type}.pkl")
-    joblib.dump({"model": model, "scaler": scaler}, model_path)
+    joblib.dump({"model": model, "scaler": scaler, "columns": X_train.columns.tolist()}, model_path)
 
     print(f"Saved model to {model_path}")
     print(f"MSE: {mse:.3f}, R2: {r2:.3f}")
